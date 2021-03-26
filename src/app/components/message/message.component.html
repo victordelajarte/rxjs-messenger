@@ -1,6 +1,6 @@
 <p
   class="message"
-  ngClass="{ fromMe: message.username === username }"
+  [ngClass]="{ fromMe: message.username === username }"
   [title]="title"
 >
   {{ message.text }}

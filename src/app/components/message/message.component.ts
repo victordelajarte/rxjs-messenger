@@ -13,6 +13,6 @@ export class MessageComponent {
   constructor() {}
 
   public get title() {
-    return `Message sent at ${this.message.date.toLocaleDateString()}`;
+    return `Message sent at ${this.message.date.toLocaleString()}`;
   }
 }
