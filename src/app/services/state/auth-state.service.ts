@@ -21,6 +21,11 @@ export class AuthStateService {
     return !!user?.id;
   }
 
+  public get userName(): string | null {
+    const user = this.user.getValue();
+    return user?.username;
+  }
+
   public async login() {
     const user = await this.authService.login();
     this.user.next({ ...user });

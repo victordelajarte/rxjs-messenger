@@ -20,4 +20,18 @@ export class MessagesStateService {
       this.messages.next([...this.messagesService.getMessagesFromAPI()]);
     }
   }
+
+  public async sendMessage(text: string): Promise<void> {
+    try {
+      const newMessage = await this.messagesService.sendMessage(
+        text,
+        this.authStateService.userName
+      );
+      const messages = this.messages.getValue();
+      messages.push(newMessage);
+      this.messages.next(messages);
+    } catch (error) {
+      alert(error);
+    }
+  }
 }

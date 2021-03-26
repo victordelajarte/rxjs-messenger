@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="newMessageText" />
+<button type="button" (click)="sendMessage()" [disabled]="!newMessageText">
+  Envoyer un message
+</button>

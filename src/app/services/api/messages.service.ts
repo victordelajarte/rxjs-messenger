@@ -23,4 +23,21 @@ export class MessagesService {
   public getMessagesFromAPI(): Message[] {
     return [...dummyMessages];
   }
+
+  public sendMessage(text: string, username: string): Promise<Message> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        text = text.trim();
+        if (!text || !username) {
+          return reject('Invalid parameters');
+        }
+
+        resolve({
+          date: new Date(),
+          username,
+          text,
+        });
+      }, 200);
+    });
+  }
 }
