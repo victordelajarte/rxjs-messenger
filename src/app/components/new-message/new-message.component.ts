@@ -12,5 +12,6 @@ export class NewMessageComponent {
 
   public sendMessage() {
     this.messagesState.sendMessage(this.newMessageText);
+    this.newMessageText = '';
   }
 }

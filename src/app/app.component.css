@@ -1,5 +1,6 @@
 main {
   max-width: 80vw;
-  margin: 3em auto;
+  margin: 5vh auto;
+  height: 90vh;
   font-family: sans-serif;
 }

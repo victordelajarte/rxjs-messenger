@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.message-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.message-container {
+  padding: 1em;
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+}
+
+.user-infos {
+  padding: 1em;
+  background-color: rgb(208, 233, 255);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+button {
+  padding: 1em;
+  cursor: pointer;
+}

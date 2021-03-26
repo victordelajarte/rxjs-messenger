@@ -1,25 +1,25 @@
-<div *ngIf="user; else notConnected" class="message-page">
+<div *ngIf="user; else notConnected">
   <div class="user-infos">
     Je suis connecté en tant que {{ user.username }} (id: {{ user.id }})
+    <button type="button" (click)="logout()">Déconnexion</button>
   </div>
+  <div class="message-page">
+    <ng-container *ngIf="messages$ | async as messages">
+      <div *ngIf="messages.length; else noMessage" class="message-container">
+        <app-message
+          *ngFor="let message of messages"
+          [message]="message"
+          [username]="user.username"
+        ></app-message>
+      </div>
+    </ng-container>
 
-  <ng-container *ngIf="messages$ | async as messages">
-    <div *ngIf="messages.length; else noMessage" class="message-container">
-      <app-message
-        *ngFor="let message of messages"
-        [message]="message"
-        [username]="user.username"
-      ></app-message>
-    </div>
-  </ng-container>
+    <ng-template #noMessage>
+      <p>Aucun message... si t'as pas d'amis, prends un Curly !</p>
+    </ng-template>
 
-  <ng-template #noMessage>
-    <p>Aucun message... si t'as pas d'amis, prends un Curly !</p>
-  </ng-template>
-
-  <app-new-message> </app-new-message>
-
-  <button type="button" (click)="logout()">Déconnexion</button>
+    <app-new-message> </app-new-message>
+  </div>
 </div>
 
 <ng-template #notConnected>
