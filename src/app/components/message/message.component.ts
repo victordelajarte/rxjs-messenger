@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Message from 'src/app/message.interface';
 
 @Component({
@@ -7,7 +7,9 @@ import Message from 'src/app/message.interface';
   styleUrls: ['./message.component.css'],
 })
 export class MessageComponent {
-  message: Message;
+  @Input() message: Message;
+  @Input() username: string;
+
   constructor() {}
 
   public get title() {

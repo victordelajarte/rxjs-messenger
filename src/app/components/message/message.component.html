@@ -1,3 +1,7 @@
-<p class="message" ngClass="{{ message.fromMe }}" [title]="title">
+<p
+  class="message"
+  ngClass="{ fromMe: message.username === username }"
+  [title]="title"
+>
   {{ message.text }}
 </p>

@@ -1,5 +1,5 @@
 export default interface Message {
   text: string;
-  fromMe: boolean;
+  username: string;
   date: Date;
 }

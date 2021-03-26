@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MessageComponent } from './components/message/message.component';
+import { MessagesPageComponent } from './pages/messages-page/messages-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessageComponent
+    MessageComponent,
+    MessagesPageComponent
   ],
   imports: [
     BrowserModule
