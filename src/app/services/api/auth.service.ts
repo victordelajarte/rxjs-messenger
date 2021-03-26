@@ -15,8 +15,14 @@ export class AuthService {
     return new Promise((resolve) => {
       // simulate call to API
       setTimeout(() => {
-        resolve({ ...dummyUser });
+        const user = { ...dummyUser };
+        localStorage.setItem('user', JSON.stringify(user));
+        resolve(user);
       }, 500);
     });
+  }
+
+  public logout(): void {
+    localStorage.clear();
   }
 }
