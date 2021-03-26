@@ -1,15 +1,15 @@
-<div *ngIf="authState.user$ | async as user; else notConnected">
+<div *ngIf="user; else notConnected">
   <p>Je suis connecté en tant que {{ user.username }} (id: {{ user.id }})</p>
 
-  <div *ngIf="messagesState.messages$ | async as messages; else noMessage">
-    <ng-container *ngIf="messages.length; else noMessage">
+  <ng-container *ngIf="messages$ | async as messages">
+    <div *ngIf="messages.length; else noMessage">
       <app-message
         *ngFor="let message of messages"
         [message]="message"
         [username]="user.username"
       ></app-message>
-    </ng-container>
-  </div>
+    </div>
+  </ng-container>
 
   <ng-template #noMessage>
     <p>Aucun message... si t'as pas d'amis, prends un Curly !</p>
